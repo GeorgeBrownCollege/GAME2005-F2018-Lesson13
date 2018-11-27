@@ -49,6 +49,16 @@ int GameObject::getWidth()
 	return m_width;
 }
 
+bool GameObject::getIsColliding()
+{
+	return m_isColliding;
+}
+
+std::string GameObject::getName()
+{
+	return m_name;
+}
+
 void GameObject::setPosition(glm::vec2 newPosition)
 {
 	m_position = newPosition;
@@ -67,4 +77,14 @@ void GameObject::setHeight(int newHeight)
 void GameObject::setVelocity(glm::vec2 newVelocity)
 {
 	m_velocity = newVelocity;
+}
+
+void GameObject::setIsColliding(bool check)
+{
+	m_isColliding = check;
+}
+
+void GameObject::setName(std::string newName)
+{
+	m_name = newName;
 }

@@ -27,12 +27,17 @@ public:
 	glm::vec2 getAcceleration();
 	int getHeight();
 	int getWidth();
+	bool getIsColliding();
+	std::string getName();
+
 
 	// setters for common variables
 	void setPosition(glm::vec2 newPosition);
 	void setWidth(int newWidth);
 	void setHeight(int newHeight);
 	void setVelocity(glm::vec2 newVelocity);
+	void setIsColliding(bool check);
+	void setName(std::string newName);
 
 
 private:
@@ -54,6 +59,10 @@ private:
 	int m_currentFrame;
 	int m_numFrames;
 	std::string m_textureID;
+
+	//collision variables
+	bool m_isColliding;
+	std::string m_name;
 };
 
 #endif

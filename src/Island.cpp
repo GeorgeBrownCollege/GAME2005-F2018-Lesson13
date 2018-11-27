@@ -10,6 +10,10 @@ Island::Island()
 	setWidth(size.x);
 	setHeight(size.y);
 	setVelocity(glm::vec2(0, 5)); // 5px per frame
+	_reset();
+
+	setName("island");
+	setIsColliding(false);
 }
 
 Island::~Island()

@@ -9,6 +9,9 @@ Player::Player()
 	glm::vec2 size = TheTextureManager::Instance()->getTextureSize("player");
 	setWidth(size.x);
 	setHeight(size.y);
+
+	setName("player");
+	setIsColliding(false);
 }
 
 Player::~Player()

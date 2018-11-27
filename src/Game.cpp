@@ -23,6 +23,7 @@ Game::~Game()
 void Game::createGameObjects()
 {
 	m_pPlayer = new Player();
+	m_pIsland = new Island();
 }
 
 bool Game::init(const char* title, int xpos, int ypos, int height, int width, bool fullscreen)
@@ -84,7 +85,9 @@ void Game::render()
 {
 	SDL_RenderClear(m_pRenderer); // clear the renderer to the draw colour
 
+	m_pIsland->draw();
 	m_pPlayer->draw();
+	
 	
 
 	SDL_RenderPresent(m_pRenderer); // draw to the screen
@@ -92,7 +95,10 @@ void Game::render()
 
 void Game::update()
 {
+	m_pIsland->update();
 	m_pPlayer->update();
+
+	CollisionManager::check(m_pPlayer, m_pIsland);
 }
 
 void Game::clean()

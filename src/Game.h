@@ -10,6 +10,8 @@
 
 #include "TextureManager.h"
 #include "Player.h"
+#include "Island.h"
+#include "CollisionManager.h"
 
 class Game
 {
@@ -60,6 +62,8 @@ private:
 	static Game* s_pInstance;
 
 	Player* m_pPlayer;
+	Island* m_pIsland;
+	
 
 	void createGameObjects();
 
